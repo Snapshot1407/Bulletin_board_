@@ -1,0 +1,8 @@
+
+<h1>Django Image Uploading</h1>
+<ul>
+  {% for ads in object_list %}
+    <h2>{{ ads.title }}</h2>
+    <img src="{{ ads.cover.url}}" alt="{{ ads.title }}">
+  {% endfor %}
+</ul>
