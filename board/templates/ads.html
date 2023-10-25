@@ -15,6 +15,9 @@ Ads
        {{ filterset.form.as_p }}
        {# Добавим кнопку отправки данных формы #}
        <input type="submit" value="Найти" />
+       {% if filter.is_bound %}
+        <input type="submit" <a href="{% url 'ads_list' %}">Clear filters</a>/>
+{% endif %}
    </form>
 
    <hr>
@@ -26,15 +29,17 @@ Ads
                <td>Категория</td>
                <td>Автор</td>
                <td>Количество</td>
+               <td></td>
            </tr>
 
            {% for ad in ads_list %}
            <tr>
-               <td>{{ ad.title }}</td>
+               <td><a href="{{ad.id}}">{{ ad.title|upper }} </a></td>
                <td>{{ ad.text|truncatechars:15 }}</td>
                <td>{{ ad.categories.name }}</td>
                <td>{{ ad.author }}</td>
                <td>{{ ad.time_in }}</td>
+               <td><img src="{{ MEDIA_URL }}{{ad.image.url}}" width=300px /></td>
            </tr>
            {% endfor %}
 

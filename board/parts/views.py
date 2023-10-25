@@ -28,6 +28,7 @@ class AdsSearch(ListView):
     context_object_name = 'ads_list'
     paginate_by = 10
 
+
     def get_queryset(self):
         # Получаем обычный запрос
         queryset = super().get_queryset()
@@ -61,7 +62,7 @@ class AdsCreate(CreateView, PermissionRequiredMixin):
 
 class AdsUpdate(UpdateView, PermissionRequiredMixin, LoginRequiredMixin):
     permission_required = ('parts.change_ad',)
-
+    context_object_name = 'ads_create'
     form_class = AdsForm
     model = Ads
     template_name = 'ads_edit.html'
@@ -73,5 +74,7 @@ class AdsUpdate(UpdateView, PermissionRequiredMixin, LoginRequiredMixin):
 class AdsDelete(DeleteView, PermissionRequiredMixin, LoginRequiredMixin):
     permission_required = ('parts.delete_ad',)
     model = Ads
+    context_object_name = 'ads_delete'
     template_name = 'ads_delete.html'
     success_url = reverse_lazy('ads_list')
+

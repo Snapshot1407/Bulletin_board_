@@ -6,5 +6,5 @@ urlpatterns = [
    path('<int:pk>', AdsDetail.as_view(), name='post_detail'),
    path('create/', AdsCreate.as_view(), name='ad_create'),
    path('<int:pk>/edit/', AdsUpdate.as_view(), name='ad_edit'),
-   path('<int:pk>/delete/', AdsDelete.as_view(), name='ad_delete'),
+   path('<int:pk>/delete/', AdsDelete.as_view(), name='ad_delete')
 ]

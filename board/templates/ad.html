@@ -3,16 +3,22 @@
 
 
 
-<!-- Название у нас будет Product -->
+<!-- Название  -->
 {% block title %}
 Ad
 {% endblock title %}
 
 <!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
-<h1><strong>{{ ad }}</strong></h1>
+<h1><strong>{{ ad|upper }}</strong></h1>
 
-        <p>{{ ad.text }}</p>
+               <p>{{ ad.text}}</p>
+               <p>{{ ad.categories.name }}</p>
+               <p>{{ ad.author }}</p>
+               <p>{{ ad.time_in }}</p>
+               <p><img src="{{ MEDIA_URL }}{{ad.image.url}}" width=300px /></p>
+
+
 <hr>
 <small>{{ ad.time_in }}</small>
 {% endblock content %}

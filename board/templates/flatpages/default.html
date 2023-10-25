@@ -5,17 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Full Width Pics - Start Bootstrap Template</title>
+        <title>MMORPG Website</title>
 
         {%load static%}
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
+
         <!-- Responsive navbar-->
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
    <div class="container">
-       <a class="navbar-brand" href="#">Django flatpages</a>
+       <a class="navbar-brand" href="http://127.0.0.1:8000/gaming_board/">MMORPG</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse"
                data-target="#navbarResponsive"
                aria-controls="navbarResponsive" aria-expanded="false"
@@ -25,9 +26,18 @@
        <div class="collapse navbar-collapse" id="navbarResponsive">
            <ul class="navbar-nav ml-auto">
 
-               <li class="nav-item">
-                   <a class="nav-link" href="/NewsPortal/">Список новостей и статей</a>
-               </li>
+               <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Blogs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="1">Django</a>
+                        <a class="dropdown-item" href="2">Matplotlib</a>
+                        <a class="dropdown-item" href="3">Turtle</a>
+                        <a class="dropdown-item" href="4">Tkinter</a>
+                    </div>
+                </li>
                <li class="nav-item">
                    <a class="nav-link" href="/admin/">Error</a>
                </li>
@@ -37,6 +47,7 @@
 </nav>
 
         <!-- Content section-->
+
         <section class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
@@ -47,6 +58,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; MMORPG Website 2023</p></div>

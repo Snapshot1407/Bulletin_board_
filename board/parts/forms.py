@@ -1,10 +1,11 @@
-from django.forms import ModelForm, CharField
 
+from django import forms
 from .models import Ads
 
 
-class AdsForm(ModelForm):
+class AdsForm(forms.ModelForm):
     class Meta:
+        image = forms.ImageField()
         model = Ads
         fields = [
             'title',
